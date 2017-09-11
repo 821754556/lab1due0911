@@ -15,7 +15,7 @@ public class DieTest {
 			Die d = new Die();
 			assertTrue((int)d.getDieValue() <=6);
 			assertTrue((int)d.getDieValue() >=1);
-			// TODO: Make sure value of die is between 1 and 6.
+			 
 		}
 
 	}

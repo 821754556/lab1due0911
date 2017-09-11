@@ -11,11 +11,7 @@ public class Round {
     
     
 	public Round() {
-		// TODO: Execute Come Out roll, value ComeOutScore
-
-		// TODO: Create a loop that will execute a roll until point is made, or
-		// seven-out
-// TODO: value the eGameResult after the round is complete
+		 
      
 		Roll First = new Roll();
 		rolls.add(First);
@@ -71,8 +67,7 @@ public class Round {
 	
 
 	public LinkedList<Roll> getList() {
-		// Return the roll count
-		//return the value of the linked list rolls
+		 
 		return rolls;
 	}
 
