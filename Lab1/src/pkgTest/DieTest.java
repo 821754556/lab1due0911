@@ -13,7 +13,8 @@ public class DieTest {
 
 		for (int a = 0; a < 10000; a++) {
 			Die d = new Die();
-			assertEquals((int)d.getDieValue(),(int)1|(int)2|(int)3|(int)4|(int)5|(int)6);
+			assertTrue((int)d.getDieValue() <=6);
+			assertTrue((int)d.getDieValue() >=1);
 			// TODO: Make sure value of die is between 1 and 6.
 		}
 

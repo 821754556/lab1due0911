@@ -7,9 +7,8 @@ public class Round {
 	private int ComeOutScore;
 	private eGameResult eGameResult;
 	private LinkedList<Roll> rolls = new LinkedList<Roll>();
-    private int x;
-    private int y;
-    private int z;
+	
+    
     
 	public Round() {
 		// TODO: Execute Come Out roll, value ComeOutScore
@@ -18,35 +17,63 @@ public class Round {
 		// seven-out
 // TODO: value the eGameResult after the round is complete
      
-		y = Roll.getScore();
-		z=y;
-		x=1;
-		if(y==2|y==3|y==12|y==7|y==11) {
-			x=1;
-		}
-		else {
-			y=Roll.getScore();
-			while(y==z|y==7){
-				y=Roll.getScore();
-				x=x+1;
-				
-			}
-			
-			
-			
-		}
+		Roll First = new Roll();
+		rolls.add(First);
+		ComeOutScore=First.getScore();
 		
-		ComeOutScore=y;
-	   }
+		
+		
+		switch(ComeOutScore) {
+		case 2:
+		case 3:
+		case 12:
+			eGameResult=eGameResult.CRAPS;
+				break;
+		case 7:
+		case 11:
+			eGameResult=eGameResult.NATURAL;
+			default: 
+				do {
+					Roll r =new Roll();
+					rolls.add(r);
+					
+					
+					if(r.getScore()==ComeOutScore) {
+						eGameResult=eGameResult.POINT;
+						break;
+					}
+					else if (r.getScore()==7) 
+					{
+						eGameResult=eGameResult.SEVEN_OUT;
+						break;
+					}
+					
+				
+				
+				}while(true);
+		}
+	}
+				
+		
+			
+			
+			
+	public eGameResult geteGameResult() {
+		return eGameResult;
+	}
+		
+		
+	   
 		
     
     
 	
 	
 
-	public int RollCount() {
+	public LinkedList<Roll> getList() {
 		// Return the roll count
-		return x;
+		//return the value of the linked list rolls
+		return rolls;
 	}
 
 }
